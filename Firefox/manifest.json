@@ -1,17 +1,23 @@
 {
 
-  "description": "Adds a solid red border to all webpages matching mozilla.org. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#borderify",
+  "description": "Custom card deck management for Cards Agains Humanity",
   "manifest_version": 2,
-  "name": "Borderify",
-  "version": "1.0",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/borderify",
+  "name": "CARExtension",
+  "version": "0.1",
+  
   "icons": {
     "48": "icons/border-48.png"
   },
 
+  "browser_action": {
+    "default_icon": "icons/border-48.png",
+     "default_title": "Beastify",
+    "default_popup": "popup/presetList.html"
+  },
+
   "content_scripts": [    
     {
-      "matches": ["*://*.pretendyoure.xyz/*"],
+      "matches": ["file:///*"],
       "js": ["helpers.js", "UIAddition.js", "cards.js"]
     }
   ]
