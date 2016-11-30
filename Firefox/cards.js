@@ -28,9 +28,9 @@ function AddCardToDeck(cardNumber){
 ///
 
 function FakeMain(){
-    console.log("boom")
    var box = Helpers.GetOptionsBox();
    var cont = UIAddition.CreateButtons();
+
    box.appendChild(cont);
 }
 

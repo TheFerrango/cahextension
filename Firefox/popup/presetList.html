@@ -1,7 +1,45 @@
-<div>
-    <button onclick="alert('new preset')">Add new</button>
-    <h3>Existing Presets</h3>
-    <div>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <script src="../StorageHelper.js" ></script>
+        <script src="presetList.js"></script>
+        <link rel="stylesheet" href="presetList.css" />
+  </head>
+  <body>
+    <div class="containerDiv">    
+      <div id="divNewSet" class="fullWidth" style="display:none">
+        <div style="display:none">
+          <input type="hidden" id="HDFNewEdit" />
+        </div>
+        <div>
+          <span class="lightText">Insert the preset name here:</span>
+          <input  id="txtSetName" type="text" class="fullWidth" />
 
+        </div>
+        <div style="margin:5px"></div>
+        <div>        
+          <span class="lightText">Insert the list of card sets, separated by commas.</span>
+          <textarea id="txtSetCards" rows="3" class="fullWidth largeTextArea" >
+
+          </textarea>
+        </div>
+        <div style="margin:5px"></div>
+        <div>
+          <button id="saveBtn" class="saveBtn">Save set</button>
+          <button id="cancelBtn" class="cancelBtn">Cancel</button>
+        </div>
+      </div>
     </div>
-</div>
+    <div id="divExtPreset" class="fullWidth">
+
+        <button id="newBtn" class="newBtn">Create new</button>
+      
+    <h3>Existing Presets</h3>
+      <div class="setsContainer" id=setsContainer>
+
+      </div>
+    </div>
+    
+    </div>
+  </body>
+</html>

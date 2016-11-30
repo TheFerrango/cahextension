@@ -11,9 +11,11 @@
 
   "browser_action": {
     "default_icon": "icons/border-48.png",
-     "default_title": "Beastify",
+    "default_title": "Manage CAR presets",
     "default_popup": "popup/presetList.html"
   },
+
+  "permissions": [ "storage" ],
 
   "content_scripts": [    
     {
