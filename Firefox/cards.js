@@ -1,7 +1,3 @@
-
-
-
-
 function WriteInChat(strMsg){
     console.log("hello")
     var txtIn = Helpers.GetInputText(Helpers.GetGameNumber());

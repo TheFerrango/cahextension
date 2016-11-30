@@ -4,7 +4,6 @@ document.addEventListener("click", (e) => {
     document.getElementById("divNewSet").style.display="";
     document.getElementById("divExtPreset").style.display="none";
     document.getElementById("HDFNewEdit").value = "NEW";
-    HDFNewEdit
   }
   else if (e.target.classList.contains("cancelBtn") || e.target.classList.contains("saveBtn")) {
     var inputTitle = document.getElementById('txtSetName');
@@ -33,13 +32,13 @@ document.addEventListener("click", (e) => {
 });
 
 initialize();
+
 function onError(error) {
   console.log(error);
 }
 
 function initialize() {
-  var gettingAllStorageItems = browser.storage.local.get(null);
-  gettingAllStorageItems.then((results) => {
+  StorageHelper.ReadFromMemory(null).then(function (results) {
     var noteKeys = Object.keys(results);
     for(var noteKey of noteKeys) {
       var curValue = results[noteKey];

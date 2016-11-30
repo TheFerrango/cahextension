@@ -1,23 +1,19 @@
 class StorageHelper
 {
     static WriteToMemory(fieldName, data, serialize)
-    {
-        console.log("wow")
-        
+    {   
         if(serialize)
             data = JSON.stringify(data);
-        browser.storage.local.set({fieldName : data });
+        return browser.storage.local.set({ [fieldName] : data });
     }
 
-    static ReadFromMemory(fieldName, deserialize){        
-        var data = browser.storage.local.get(fieldName);
-        if(deserialize)
-            data = JSON.parse(data);
+    static ReadFromMemory(fieldName){        
+        var data = browser.storage.local.get(fieldName);        
         return data; 
     }
 
     static RemoveFromMemory(fieldName)
     {
-
+         browser.storage.local.remove(fieldName);
     }
 }

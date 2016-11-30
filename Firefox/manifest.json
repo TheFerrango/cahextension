@@ -20,7 +20,7 @@
   "content_scripts": [    
     {
       "matches": ["file:///*"],
-      "js": ["helpers.js", "UIAddition.js", "cards.js"]
+      "js": ["StorageHelper.js", "helpers.js", "UIAddition.js", "cards.js" ]
     }
   ]
 }
