@@ -19,6 +19,7 @@
 
   "content_scripts": [    
     {
+      // "matches": ["*://pyx-3.pretendyoure.xyz/zy/game.jsp*"],      
       "matches": ["file:///*"],
       "js": ["StorageHelper.js", "helpers.js", "UIAddition.js", "cards.js" ]
     }

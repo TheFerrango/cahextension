@@ -2,10 +2,8 @@ class UIAddition {
     static CreateButtons(){
         var holDiv = document.createElement("div");
         holDiv.appendChild(document.createElement("hr"));
-
         var selectList = document.createElement("select");
-
-     
+        selectList.setAttribute("id", "cbxCardPack");
         StorageHelper.ReadFromMemory(null).then(function(results)  {
             results = results[0];
       
@@ -15,16 +13,16 @@ class UIAddition {
                 var selItem =document.createElement("option");
                 selItem.appendChild(document.createTextNode(noteKey));        
                 selItem.setAttribute("value", curValue);
-                selectList.appendChild(selItem);
-                console.log(selItem);
+                selectList.appendChild(selItem);                
             }
-        }, function() { console.log("boom errore") });      
+        }, function(err) { console.error(err) });      
 
         holDiv.appendChild(selectList);
 
         var newBtn = document.createElement("button");
         newBtn.appendChild(document.createTextNode("Add cards"));        
-        newBtn.setAttribute("onclick", "alert('boom')");
+         newBtn.setAttribute("onclick", "OnAddCardsClick()");
+        newBtn.setAttribute("id", "btnAddCardDecks");
         holDiv.appendChild(newBtn);
 
         return holDiv;

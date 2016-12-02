@@ -15,3 +15,23 @@ body .lightText {
     font-family: Arial, Helvetica, sans-serif;
     color: #555
 }
+
+body div.setsContainer{
+    display: table;
+} 
+
+body div.setsContainer > div{
+    display: table-row;
+    
+} 
+body div.setsContainer > div> button{
+    display: table-cell;
+    width: 1px;
+    white-space: nowrap;
+} 
+body div.setsContainer > div > div{
+    color: red;
+    width: 270px;
+    display: table-cell;
+    
+} 

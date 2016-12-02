@@ -70,20 +70,23 @@ function displayNote(title, body) {
   var noteContainer = document.getElementById('setsContainer');
   /* create note display box */
   var noteDisplay = document.createElement('div');
+  
   var noteName = document.createElement('div');
   
   
-  var editBtn = document.createElement('button');
-  var deleteBtn = document.createElement('button');
+  var editBtn = document.createElement('img');
+  var deleteBtn = document.createElement('img');
 
   noteDisplay.setAttribute('class','preset');
   noteName.textContent = title;
   
   editBtn.setAttribute('class', 'edit');
-  editBtn.textContent = "Edit set";
+  editBtn.setAttribute('src', '../icons/edit.png');
+  //editBtn.textContent = "Edit set";
  
   deleteBtn.setAttribute('class','delete');
-  deleteBtn.textContent = 'Delete set';
+  deleteBtn.setAttribute('src', '../icons/delete.png');
+  //deleteBtn.textContent = 'Delete set';
 
   noteDisplay.appendChild(noteName);
   noteDisplay.appendChild(editBtn);
