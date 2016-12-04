@@ -18,7 +18,7 @@ class Helpers
 
     static GetOptionsBox()
 {
-    var fd = document.querySelector("fieldset");
+    var fd = document.querySelector("#main_holder fieldset");
     return fd;
 }
 
@@ -29,8 +29,8 @@ class Helpers
 
     static IsGameWindow()
     {
-        var btnLeave = document.getElementById("leave_game");
-        return btnLeave.style.display != "none";        
+        var optBox = Helpers.GetOptionsBox();
+        return optBox != null; 
     }
 
 }

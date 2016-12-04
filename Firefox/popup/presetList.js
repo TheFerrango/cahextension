@@ -73,6 +73,7 @@ function displayNote(title, body) {
   
   var noteName = document.createElement('div');
   
+  var actionDiv = document.createElement('div');
   
   var editBtn = document.createElement('img');
   var deleteBtn = document.createElement('img');
@@ -88,10 +89,11 @@ function displayNote(title, body) {
   deleteBtn.setAttribute('src', '../icons/delete.png');
   //deleteBtn.textContent = 'Delete set';
 
-  noteDisplay.appendChild(noteName);
-  noteDisplay.appendChild(editBtn);
-  noteDisplay.appendChild(deleteBtn);
+  actionDiv.appendChild(editBtn);
+  actionDiv.appendChild(deleteBtn);
 
+  noteDisplay.appendChild(noteName);
+  noteDisplay.appendChild(actionDiv);
 
   noteContainer.appendChild(noteDisplay);
 

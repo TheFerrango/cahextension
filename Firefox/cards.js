@@ -29,12 +29,15 @@ function OnAddCardsClick() {
 ///
 
 function FakeMain(){
-   var box = Helpers.GetOptionsBox();
-   var cont = UIAddition.CreateButtons();
-   
-   box.appendChild(cont);
+    if(Helpers.IsGameWindow())
+    {   
+        var box = Helpers.GetOptionsBox();
+        var cont = UIAddition.CreateButtons();
+        
+        box.appendChild(cont);
 
-   exportFunction(OnAddCardsClick, window, {defineAs: "OnAddCardsClick" })
+        exportFunction(OnAddCardsClick, window, {defineAs: "OnAddCardsClick" })
+    }
 }
 
-FakeMain();
+window.onhashchange = FakeMain;
