@@ -1,9 +1,12 @@
 class UIAddition {
     static CreateButtons(){
         var holDiv = document.createElement("div");
+        holDiv.setAttribute("id", "presetsCustomDiv");
         holDiv.appendChild(document.createElement("hr"));
+       
         var selectList = document.createElement("select");
         selectList.setAttribute("id", "cbxCardPack");
+        
         StorageHelper.ReadFromMemory(null).then(function(results)  {
             results = results[0];
       
@@ -21,10 +24,11 @@ class UIAddition {
 
         var newBtn = document.createElement("button");
         newBtn.appendChild(document.createTextNode("Add cards"));        
-         newBtn.setAttribute("onclick", "OnAddCardsClick()");
+        newBtn.setAttribute("onclick", "OnAddCardsClick()");
         newBtn.setAttribute("id", "btnAddCardDecks");
+        
         holDiv.appendChild(newBtn);
-
+        
         return holDiv;
     }
 }

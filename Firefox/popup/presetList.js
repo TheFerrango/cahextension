@@ -9,19 +9,21 @@ document.addEventListener("click", (e) => {
     var inputTitle = document.getElementById('txtSetName');
     var inputList = document.getElementById('txtSetCards');
 
+
     if(e.target.classList.contains("saveBtn"))
     {
       var presetTitle = inputTitle.value;
       var presetList =  inputList.value.split(',');
 
-      for(var idx = 0; idx < presetList.length; idx++)
-        presetList[idx] = presetList[idx].trim();
-      
-      SavePreset(presetTitle, presetList)
-    } else 
-    {
-      
-    }
+      if(presetList && presetTitle)
+      {
+        for(var idx = 0; idx < presetList.length; idx++)
+          presetList[idx] = presetList[idx].trim();
+        SavePreset(presetTitle, presetList);
+      }else {        
+        return;     
+      }
+    } 
 
     inputTitle.value="";
     inputList.value="";
@@ -30,8 +32,6 @@ document.addEventListener("click", (e) => {
      document.getElementById("divExtPreset").style.display="";
   }
 });
-
-initialize();
 
 function onError(error) {
   console.log(error);
@@ -115,6 +115,6 @@ function displayNote(title, body) {
     evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
     browser.storage.local.remove(title);
   })
-
-
 }
+
+initialize();

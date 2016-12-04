@@ -28,16 +28,21 @@ function OnAddCardsClick() {
 /// ##########################
 ///
 
-function FakeMain(){
+function FakeMain(){    
     if(Helpers.IsGameWindow())
     {   
-        var box = Helpers.GetOptionsBox();
-        var cont = UIAddition.CreateButtons();
-        
-        box.appendChild(cont);
+        if(!Helpers.UIAlreadyAdded()){
+            var box = Helpers.GetOptionsBox();
+            var cont = UIAddition.CreateButtons();
+            
+            box.appendChild(cont);
 
-        exportFunction(OnAddCardsClick, window, {defineAs: "OnAddCardsClick" })
+            exportFunction(OnAddCardsClick, window, {defineAs: "OnAddCardsClick" })
+        }
     }
+    else setTimeout(FakeMain, 500);
+    
 }
 
 window.onhashchange = FakeMain;
+FakeMain();

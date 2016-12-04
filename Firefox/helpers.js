@@ -1,5 +1,10 @@
 class Helpers
 {
+    static UIAlreadyAdded(){
+        var settDiv = document.getElementById("presetsCustomDiv");
+        return settDiv != null;
+    }
+
     static SplitUrl  (urlStr, splitStr){    
         var splitUrl = urlStr.split(splitStr);
         return splitUrl;
@@ -17,12 +22,12 @@ class Helpers
     };
 
     static GetOptionsBox()
-{
-    var fd = document.querySelector("#main_holder fieldset");
-    return fd;
-}
+    {
+        var fd = document.querySelector("#main_holder fieldset");
+        return fd;
+    }
 
-     static ClickSend  (gameNumber){
+    static ClickSend  (gameNumber){
         var btnIn = document.querySelector("#tab-chat-game_" + gameNumber.toString() + " > input.chat_submit");
         btnIn.click()
     }
@@ -32,12 +37,4 @@ class Helpers
         var optBox = Helpers.GetOptionsBox();
         return optBox != null; 
     }
-
 }
-
-
-
-/*
-    get element by id su leave game e controlla CSS
-
-*/

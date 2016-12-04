@@ -19,8 +19,7 @@
 
   "content_scripts": [    
     {
-      "matches": ["*://*.pretendyoure.xyz/zy/game.jsp*"],      
-      //"matches": ["file:///*"],
+      "matches": ["*://*.pretendyoure.xyz/zy/game.jsp*"],
       "js": ["StorageHelper.js", "helpers.js", "UIAddition.js", "cards.js" ]
     }
   ]
