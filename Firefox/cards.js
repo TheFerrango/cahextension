@@ -9,7 +9,6 @@ function AddCardToDeck(cardNumber){
     WriteInChat(strCommand);
 }
 
-
 function OnAddCardsClick() {
     var selection = document.getElementById("cbxCardPack");
     
