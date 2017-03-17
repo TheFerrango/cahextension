@@ -3,7 +3,7 @@
   "description": "Custom card deck management for Cards Agains Humanity",
   "manifest_version": 2,
   "name": "CAHExtension",
-  "version": "0.1",
+  "version": "0.2",
   
   "icons": {
     "48": "icons/border-48.png"

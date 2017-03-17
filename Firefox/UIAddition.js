@@ -8,9 +8,19 @@ class UIAddition {
         selectList.setAttribute("id", "cbxCardPack");
         
         StorageHelper.ReadFromMemory(null).then(function(results)  {
-            results = results[0];
+            console.log(results);
+            //results = results[0];
       
-            var noteKeys = Object.keys(results);
+            var noteKeys = null
+            
+            try{
+                noteKeys =Object.keys(results[0]);
+            } 
+            catch(error)
+            {
+                 noteKeys =Object.keys(results);
+            }
+            
             for(var noteKey of noteKeys) {
                 var curValue = results[noteKey];
                 var selItem =document.createElement("option");
