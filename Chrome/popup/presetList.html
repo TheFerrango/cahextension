@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+        <script src="../StorageHelper.js" ></script>
+        <script src="presetList.js"></script>
+        <link rel="stylesheet" href="presetList.css" />
+  </head>
+  <body>
+    <div class="containerDiv">    
+      <div id="divNewSet" class="fullWidth" style="display:none">
+        <div style="display:none">
+          <input type="hidden" id="HDFNewEdit" />
+        </div>
+        <div>
+          <span class="lightText">Insert the preset name here:</span>
+          <input  id="txtSetName" type="text" class="fullWidth" required/>
+        </div>
+        <div style="margin:5px"></div>
+        <div>        
+          <span class="lightText">Insert the list of card sets, separated by commas.</span>
+          <textarea id="txtSetCards" rows="3" class="fullWidth largeTextArea" required>
+
+          </textarea>
+        </div>
+        <div style="margin:5px"></div>
+        <div>
+          <button id="saveBtn" class="saveBtn">Save set</button>
+          <button id="cancelBtn" class="cancelBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div id="divExtPreset" class="fullWidth">
+      <div class="setToolbar">
+        <div  id="newBtn" class="newBtn" style="display:table-row; cursor:pointer">        
+          <img class="newBtn" src="../icons/add.png" style="display:table-cell" />
+          <div class="newBtn" style="display:table-cell; vertical-align:middle">Add new set</div>
+        </div>        
+      </div>
+      <div class="setsContainer" id="setsContainer">
+        <div class="header">
+        <div>Set Title</div>
+        <div>Actions</div>
+        </div>
+      </div>
+
+    </div>   
+  </body>
+</html>
