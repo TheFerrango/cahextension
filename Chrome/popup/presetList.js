@@ -111,8 +111,8 @@ function displayNote(title, body) {
   })
 
    deleteBtn.addEventListener('click',function(e){
-    evtTgt = e.target;
-    evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+    evtTgt = e.target;   
+    evtTgt.parentNode.parentNode.parentNode.removeChild(evtTgt.parentNode.parentNode);
     StorageHelper.RemoveFromMemory(title);
   })
 }
