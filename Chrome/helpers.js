@@ -32,8 +32,19 @@ class Helpers
         btnIn.click()
     }
 
+    static IsCAHCompatibleGame ()
+    {
+        return true;
+        var cahObj = window["cah"];
+        if(cah && cah.nickname)
+            return true;
+        else
+            return false;
+    }
+
     static IsGameWindow()
     {
+        console.log("wow");
         var optBox = Helpers.GetOptionsBox();
         return optBox != null; 
     }

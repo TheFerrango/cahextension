@@ -16,20 +16,21 @@ function AddJSFileToDOM(jsFileName) {
 ///
 
 function FakeMain(){    
-    if(Helpers.IsGameWindow())
-    {   
-        if(!Helpers.UIAlreadyAdded()){
-            var box = Helpers.GetOptionsBox();
-            var cont = UIAddition.CreateButtons();
-            
-            box.appendChild(cont);
-            
-           AddJSFileToDOM("helpers.js");
-           AddJSFileToDOM("interaction.js");
+    if(Helpers.IsCAHCompatibleGame()){
+        if(Helpers.IsGameWindow())
+        {   
+            if(!Helpers.UIAlreadyAdded()){
+                var box = Helpers.GetOptionsBox();
+                var cont = UIAddition.CreateButtons();
+                
+                box.appendChild(cont);
+                
+            AddJSFileToDOM("helpers.js");
+            AddJSFileToDOM("interaction.js");
+            }
         }
+        else setTimeout(FakeMain, 500);
     }
-    else setTimeout(FakeMain, 500);
-    
 }
 
 window.onhashchange = FakeMain;
