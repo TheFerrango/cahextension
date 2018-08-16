@@ -4,8 +4,21 @@ document.addEventListener("click", (e) => {
     document.getElementById("divNewSet").style.display="";
     document.getElementById("divExtPreset").style.display="none";
     document.getElementById("HDFNewEdit").value = "NEW";
-  }
-  else if (e.target.classList.contains("cancelBtn") || e.target.classList.contains("saveBtn")) {
+  } else if(e.target.classList.contains("impBtn")) {
+    var newDecks = Helpers.GetUsedDecks();
+
+    if(newDecks){
+        var newName = prompt("A new set will be created for the following decks: " + newDecks + "\nPlease provide a name.");
+        if(newName) {
+          SavePreset(newName, newDecks);            
+        } else {
+          Helpers.AddMessageToChat(Helpers.GetGameNumber(), "No name provided for the set. Aborting save.");
+        }
+    } else {
+      Helpers.AddMessageToChat(Helpers.GetGameNumber(), "No Cardcast sets in use.");
+    }
+
+  } else if (e.target.classList.contains("cancelBtn") || e.target.classList.contains("saveBtn")) {
     var inputTitle = document.getElementById('txtSetName');
     var inputList = document.getElementById('txtSetCards');
 

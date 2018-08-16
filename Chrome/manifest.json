@@ -18,7 +18,7 @@
   "permissions": [ "storage" ],
 
   "web_accessible_resources": [
-      "interaction.js", "helpers.js", "storagehelper.js", "test1.js"
+      "interaction.js", "helpers.js"
   ],
 
   "content_scripts": [    

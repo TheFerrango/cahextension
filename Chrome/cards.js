@@ -15,23 +15,22 @@ function AddJSFileToDOM(jsFileName) {
 /// ##########################
 ///
 
-function FakeMain(){    
-    if(Helpers.IsCAHCompatibleGame()){
-        if(Helpers.IsGameWindow())
-        {   
-            if(!Helpers.UIAlreadyAdded()){
-                var box = Helpers.GetOptionsBox();
-                var cont = UIAddition.CreateButtons();
-                
-                box.appendChild(cont);
-                
+function FakeMain(){        
+    if(Helpers.IsGameWindow())
+    {   
+        if(!Helpers.UIAlreadyAdded()){
+            var box = Helpers.GetOptionsBox();
+            var cont = UIAddition.CreateButtons();
+            
+            box.appendChild(cont);
+            
             AddJSFileToDOM("helpers.js");
             AddJSFileToDOM("interaction.js");
-            AddJSFileToDOM("storagehelper.js")
-            }
+
+            Helpers.AddMessageToChat(Helpers.GetGameNumber(), "CAHExtension initialized. Card system standing ready.")
         }
-        else setTimeout(FakeMain, 500);
     }
+    else setTimeout(FakeMain, 2000);
 }
 
 window.onhashchange = FakeMain;

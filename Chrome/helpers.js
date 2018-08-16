@@ -32,20 +32,47 @@ class Helpers
         btnIn.click()
     }
 
-    static IsCAHCompatibleGame ()
-    {
-        return true;
-        var cahObj = window["cah"];
-        if(cah && cah.nickname)
-            return true;
-        else
-            return false;
-    }
-
     static IsGameWindow()
     {
         console.log("wow");
         var optBox = Helpers.GetOptionsBox();
         return optBox != null; 
+    }
+
+    static GetUsedDecks() 
+    {
+        var newDeck = "";
+    
+        // prende i messaggi mandati dall'admin, solo il primo link
+        var adminMsg = document.querySelectorAll("span.admin > a:nth-child(1)")
+    
+        // parto da 1 perché tanto il primo elemento è sempre inutile
+        if(adminMsg.length > 1){
+            newDeck = adminMsg[1].innerText;
+            
+            // aggiungo le altre carte alla stringa
+            for(var idx = 2; idx < adminMsg.length; idx++){
+                var cardFragment = adminMsg[idx].innerText;
+                if(cardFragment.length == 5){
+                    newDeck = newDeck + ", " + cardFragment;
+                }
+            }
+        }
+    
+        return newDeck;
+    }
+
+    static AddMessageToChat(gameNumber, strMessage){
+        // TODO: implement reporting to the user via chat box, using Chrome's builtin
+        // messaging system for extensions
+
+        // var chatLog = document.querySelector("#tab-chat-game_" + gameNumber.toString() + " > .log");
+
+        // var newLine = document.createElement("span");
+        // newLine.setAttribute("title", "CAHExtension");
+        // newLine.innerText = "{" + new Date().toLocaleTimeString() +  "} " + strMessage;
+
+        // chatLog.appendChild(newLine);
+        // chatLog.appendChild(document.createElement("br"));
     }
 }
