@@ -37,7 +37,14 @@ class UIAddition {
         newBtn.setAttribute("onclick", "OnAddCardsClick()");
         newBtn.setAttribute("id", "btnAddCardDecks");
         
+        var stealBtn = document.createElement("button");
+        stealBtn.appendChild(document.createTextNode("Save cards in use"));        
+        stealBtn.setAttribute("onclick", "OnSaveUsedDecksClick()");
+        stealBtn.setAttribute("id", "btnSaveCardDecks");
+        
+
         holDiv.appendChild(newBtn);
+        holDiv.appendChild(stealBtn);
         
         return holDiv;
     }

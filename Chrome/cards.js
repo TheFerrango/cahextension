@@ -27,6 +27,7 @@ function FakeMain(){
                 
             AddJSFileToDOM("helpers.js");
             AddJSFileToDOM("interaction.js");
+            AddJSFileToDOM("storagehelper.js")
             }
         }
         else setTimeout(FakeMain, 500);
